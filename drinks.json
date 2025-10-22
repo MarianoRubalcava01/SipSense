@@ -1,0 +1,26 @@
+[
+  {
+    "name": "Strawberry Mojito",
+    "desc": "Fresh mint, lime, strawberry",
+    "temp": "Cold",
+    "is_non_alcoholic": false,
+    "sugar": 35,
+    "image_path": ""
+  },
+  {
+    "name": "Matcha Latte",
+    "desc": "Creamy matcha with milk",
+    "temp": "Hot",
+    "is_non_alcoholic": true,
+    "sugar": 20,
+    "image_path": ""
+  },
+  {
+    "name": "Cold Brew Tonic",
+    "desc": "Bold coffee + tonic",
+    "temp": "Cold",
+    "is_non_alcoholic": true,
+    "sugar": 5,
+    "image_path": ""
+  }
+]
