@@ -5,6 +5,14 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import customtkinter as ctk
 from PIL import Image
+<<<<<<< HEAD
+=======
+import openai
+import json
+
+from openai import OpenAI
+client = OpenAI()
+>>>>>>> ee81cdb (implement api)
 
 '''    pip install -r requirements.txt to install packages'''
 
