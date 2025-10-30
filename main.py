@@ -5,14 +5,13 @@ import tkinter as tk
 from tkinter import filedialog, messagebox
 import customtkinter as ctk
 from PIL import Image
-<<<<<<< HEAD
-=======
 import openai
 import json
-
 from openai import OpenAI
-client = OpenAI()
->>>>>>> ee81cdb (implement api)
+from dotenv import load_dotenv
+load_dotenv()
+APIKEY= os.getenv("API_KEY")
+client = OpenAI(api_key = APIKEY)
 
 '''    pip install -r requirements.txt to install packages'''
 
@@ -176,32 +175,50 @@ def card(drink, parent):
     '''Right Action Section '''
     ctk.CTkButton(wrapper, text="View Details", width=120, command=lambda d=drink: open_details(d)).pack(side="right", padx=12, pady=12)
 
-def refresh_results():
+def refresh_results(apiResult = False):
     for w in results_frame.winfo_children():
         if isinstance(w, ctk.CTkFrame):
             w.destroy()
-
-    query = prompt_box.get("1.0", "end").strip().lower()
     filtered = []
-    for d in drinks_store:
-        if not matches_filters(d, active_filters):
+    final_results = get_suggestions()
+    for drink in drinks_store:
+        if not matches_filters(drink, active_filters):
             continue
+
         if query:
-            hay = f"{d.get('name','')} {d.get('desc','')}".lower()
+            hay = f"{drink.get('name','')} {drink.get('desc','')}".lower()
             if query not in hay:
                 continue
-        filtered.append(d)
+        filtered.append(drink)
 
     if not filtered:
         ctk.CTkLabel(results_frame, text="No matching drinks yet. Try fewer filters or different text.", font=ctk.CTkFont(size=14)).pack(pady=20)
         return
 
-    for d in filtered:
-        card(d, results_frame)
+    for drink in filtered:
+        card(drink, results_frame)
+
+
 
 def get_suggestions():
     '''# Currently uses local filtering API with chat or some other api would go here'''
-    refresh_results()
+    drinklist =str(json.dumps(drinks_store))
+    response = client.responses.create(
+        model="gpt-5",
+        input=" You are a knowledgeable and friendly bartender or server at Main Event, a fun and lively entertainment venue. " \
+        "You know the full menu of featured drinks (provided below) and also have general knowledge of common bar cocktails. " \
+        "Your role: Offer the top two drink recommendations., Use the provided list of drinks as your core menu." \
+        ", If a guest asks for a classic or common cocktail not listed (e.g., Old Fashioned, Moscow Mule, Whiskey Sour, Martini), you should still offer it as an available option.," \
+        "Please return the results in .json " + drinklist
+    )
+    
+    userInput = prompt_box.get("0.0", "end")
+    print(active_filters)
+    for w in results_frame.winfo_children():
+        if isinstance(w, ctk.CTkFrame):
+            w.destroy()
+    return response
+    
 
 get_btn = ctk.CTkButton(prompt_section, text="✨ Get Suggestions", height=40, corner_radius=8, command=get_suggestions)
 get_btn.pack(pady=(0, 12))

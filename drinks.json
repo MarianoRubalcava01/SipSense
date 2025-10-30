@@ -1,26 +1,98 @@
 [
   {
+    "name": "House Margarita",
+    "desc": "Jose Cuervo Gold tequila, triple sec, and premium agave margarita mix.",
+    "temp": "Cold",
+    "is_non_alcoholic": false,
+    "sugar": 30,
+    "image_path": ""
+  },
+  {
+    "name": "The Perfect Patron",
+    "desc": "Grand Marnier, 1800 Reposado tequila, and premium agave margarita mix.",
+    "temp": "Cold",
+    "is_non_alcoholic": false,
+    "sugar": 25,
+    "image_path": ""
+  },
+  {
+    "name": "Triple Strawberry",
+    "desc": "Herradura Silver tequila, triple sec, strawberry puree, and fresh strawberries.",
+    "temp": "Cold",
+    "is_non_alcoholic": false,
+    "sugar": 40,
+    "image_path": ""
+  },
+  {
+    "name": "Bahama Mama",
+    "desc": "Cruzan Mango and Malibu Coconut rums mixed with pineapple juice, orange juice, and grenadine.",
+    "temp": "Cold",
+    "is_non_alcoholic": false,
+    "sugar": 45,
+    "image_path": ""
+  },
+  {
+    "name": "Island Pina Colada",
+    "desc": "REAL coconut cream, pineapple, and Mount Gay Eclipse Rum topped with dark rum.",
+    "temp": "Cold",
+    "is_non_alcoholic": false,
+    "sugar": 50,
+    "image_path": ""
+  },
+  {
+    "name": "Long Island Iced Tea",
+    "desc": "A mix of vodka, rum, gin, tequila, triple sec, sour mix, and cola.",
+    "temp": "Cold",
+    "is_non_alcoholic": false,
+    "sugar": 28,
+    "image_path": ""
+  },
+  {
     "name": "Strawberry Mojito",
-    "desc": "Fresh mint, lime, strawberry",
+    "desc": "Fresh mint, lime, and strawberry with rum.",
     "temp": "Cold",
     "is_non_alcoholic": false,
     "sugar": 35,
     "image_path": ""
   },
   {
-    "name": "Matcha Latte",
-    "desc": "Creamy matcha with milk",
-    "temp": "Hot",
-    "is_non_alcoholic": true,
-    "sugar": 20,
+    "name": "Tito’s Mule",
+    "desc": "Tito’s Handmade vodka with ginger beer and lime juice.",
+    "temp": "Cold",
+    "is_non_alcoholic": false,
+    "sugar": 18,
     "image_path": ""
   },
   {
-    "name": "Cold Brew Tonic",
-    "desc": "Bold coffee + tonic",
+    "name": "Long Island Peach Mango Tea",
+    "desc": "A sweeter take on the Long Island with peach and mango flavors.",
     "temp": "Cold",
-    "is_non_alcoholic": true,
-    "sugar": 5,
+    "is_non_alcoholic": false,
+    "sugar": 35,
+    "image_path": ""
+  },
+  {
+    "name": "Mai Tai",
+    "desc": "Cruzan rum, Dekuyper Amaretto, orange and pineapple juice, sweet and sour, grenadine, topped with dark rum.",
+    "temp": "Cold",
+    "is_non_alcoholic": false,
+    "sugar": 42,
+    "image_path": ""
+  },
+  {
+    "name": "Tito’s Spiked Strawberry Lemonade",
+    "desc": "Strawberry lemonade spiked with Tito’s Handmade vodka and topped with fresh strawberries.",
+    "temp": "Cold",
+    "is_non_alcoholic": false,
+    "sugar": 38,
+    "image_path": ""
+  },
+  {
+    "name": "Blue Hawaiian",
+    "desc": "Bacardi Pineapple rum and Malibu Coconut rum mixed with Blue Curaçao and lemonade.",
+    "temp": "Cold",
+    "is_non_alcoholic": false,
+    "sugar": 40,
     "image_path": ""
   }
 ]
